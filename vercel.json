@@ -10,11 +10,6 @@
         "src": "/(.*)",
         "dest": "/app.py"
       }
-    ],
-    "env": {
-    "FLASK_CONFIG": "production",
-    "FLASK_DEBUG": "0",
-    "SECRET_KEY": "@secret_key"
-    }
+    ]
   }
   
