@@ -64,37 +64,44 @@ def create_app(config_class=None):
                 app.config['DEBUG'] = True
                 app.config['SESSION_COOKIE_SECURE'] = False
 
-    # Ensure instance folder exists for deployment environments
+    # Ensure instance folder exists for deployment environments (skip on read-only filesystems)
     instance_path = app.instance_path
-    if not os.path.exists(instance_path):
-        os.makedirs(instance_path, exist_ok=True)
-        app.logger.info(f'Created instance folder: {instance_path}')
+    try:
+        if not os.path.exists(instance_path):
+            os.makedirs(instance_path, exist_ok=True)
+            app.logger.info(f'Created instance folder: {instance_path}')
+    except OSError:
+        # Read-only filesystem (e.g., Vercel, AWS Lambda)
+        app.logger.warning(f'Cannot create instance folder (read-only filesystem): {instance_path}')
 
-    # Ensure logs directory exists
-    if not os.path.exists('logs'):
-        os.makedirs('logs', exist_ok=True)
+    # Setup logging (skip file logging on read-only filesystems)
     log_level = logging.DEBUG if app.config.get('DEBUG') else logging.INFO
-    file_handler = RotatingFileHandler(
-        'logs/Trydo.log', 
-        maxBytes=1024*1024*10,  # 10MB
-        backupCount=20
-    )
-    file_handler.setFormatter(logging.Formatter(
-        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
+    
+    # Try to setup file logging
+    try:
+        if not os.path.exists('logs'):
+            os.makedirs('logs', exist_ok=True)
+        file_handler = RotatingFileHandler(
+            'logs/Trydo.log', 
+            maxBytes=1024*1024*10,  # 10MB
+            backupCount=20
+        )
+        file_handler.setLevel(log_level)
+        file_handler.setFormatter(logging.Formatter(
+            '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
+        ))
+        app.logger.addHandler(file_handler)
+    except (OSError, PermissionError):
+        # Read-only filesystem - use console logging only
+        app.logger.warning('File logging disabled (read-only filesystem)')
+    
+    # Always setup console logging for serverless environments
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(log_level)
+    console_handler.setFormatter(logging.Formatter(
+        '%(asctime)s %(levelname)s: %(message)s'
     ))
-    file_handler.setLevel(log_level)
-    error_handler = RotatingFileHandler(
-        'logs/Trydo_errors.log',
-        maxBytes=1024*1024*5,  # 5MB
-        backupCount=10
-    )
-    error_handler.setFormatter(logging.Formatter(
-        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]\n'
-        'Exception: %(exc_info)s'
-    ))
-    error_handler.setLevel(logging.ERROR)
-    app.logger.addHandler(file_handler)
-    app.logger.addHandler(error_handler)
+    app.logger.addHandler(console_handler)
     app.logger.setLevel(log_level)
     app.logger.info(f'Trydo startup - Debug: {app.config.get("DEBUG", False)}')
 
