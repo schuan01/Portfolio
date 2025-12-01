@@ -115,15 +115,6 @@ def create_app(config_class=None):
     # Register blueprints
     register_routes(app)
 
-    # Provide a default ContactForm so templates using `form` don't break
-    from .forms import ContactForm
-    @app.context_processor
-    def inject_default_form():
-        try:
-            return {'form': ContactForm()}
-        except Exception:
-            return {}
-
     # Register error handlers
     register_error_handlers(app)
 
