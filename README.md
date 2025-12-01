@@ -13,7 +13,7 @@
     FLASK_APP=trydo_app/app.py
     FLASK_ENV=development
     FLASK_CONFIG=development
-    SECRET_KEY=your-secret-key
+    SECRET_KEY=your-secret-key asd
     # Database
     SQLALCHEMY_DATABASE_URI=sqlite:///Trydo.db
     SQLALCHEMY_TRACK_MODIFICATIONS=False
