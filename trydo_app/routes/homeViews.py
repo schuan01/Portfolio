@@ -100,7 +100,7 @@ def elements():
 @home_bp.route('/')
 @home_bp.route('/index')
 def index():
-    return render_template("home/index.html")
+    return render_template("home/personalPortfolio.html")
 
 @home_bp.route('/landing-creative-agency')
 def landingCreativeAgency():
