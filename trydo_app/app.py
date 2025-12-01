@@ -1,17 +1,10 @@
 import os
-from jobaway_app import create_app
-from .config import DevelopmentConfig, ProductionConfig, TestingConfig
+from . import create_app
 from flask_wtf.csrf import generate_csrf
 from dotenv import load_dotenv
 
-
-config_map = {
-    'development': DevelopmentConfig,
-    'production': ProductionConfig,
-    'testing': TestingConfig,
-}
-config_name = os.environ.get('FLASK_CONFIG', 'development')
-app = create_app(config_class=config_map[config_name])
+# Rely on create_app's internal env-based configuration.
+app = create_app()
 
 @app.context_processor
 def inject_csrf_token():
