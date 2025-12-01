@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    {# Head Section #}
+    {% include 'partials/head.html' %}
+
+    <body
+        {% if body %}
+            class="position-relative spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="150"
+        {% endif %}
+    >
+        <div class="main-page">
+            {# Switcher Section #}
+            {% if not switcher %}
+                {% include 'partials/switcher.html' %}
+            {% endif %}
+
+            {# Header Section #}
+            {% if not header %}
+                {% include 'partials/header.html' %}
+            {% endif %}
+
+            {# Breadcrumb Section #}
+            {% if not breadcrumb %}
+                {% include 'partials/breadcrumb.html' %}
+            {% endif %}
+
+            {# Page‑specific content #}
+            {% block content %}
+            {% endblock %}
+
+            {# Footer Section #}
+            {% if footer == 'footer2' %}
+                {% include 'partials/footer2.html' %}
+            {% else %}
+                {% include 'partials/footer.html' %}
+            {% endif %}
+        </div>
+
+        {# Scripts Section #}
+        {% include 'partials/script.html' %}
+
+            {% block script %}
+            {% endblock %}
+    </body>
+</html>

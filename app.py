@@ -1,11 +1,10 @@
-from flask import Flask
+from dotenv import load_dotenv
+load_dotenv()
 
-app = Flask(__name__)
+from trydo_app import create_app
 
-@app.route('/')
-def home():
-    return 'Hello, World! 2'
+app = create_app()
 
-@app.route('/about')
-def about():
-    return 'About'
+if __name__ == '__main__':
+    app.run()
+    

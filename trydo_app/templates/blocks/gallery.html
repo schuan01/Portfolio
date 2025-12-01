@@ -1,0 +1,270 @@
+{% extends './layout/layout.html' %}
+
+{% block content %}
+
+    <!-- Start Page Wrapper  -->
+    <main class="page-wrapper">
+
+        <!-- Start Gallery Area  -->
+        <div class="rn-gallery-area rn-section-gap bg_color--1 line-separator">
+            <div class="container">
+                <div class="gallery-wrapper gallery-grid row mt_dec--60" id="animated-thumbnials">
+
+                    <!-- Start Single Gallery -->
+                    <a class="item-portfolio-static gallery col-lg-6 col-md-6"
+                        href="/static/images/portfolio/big/dp-big--portfolio-01.jpg">
+                        <div class="portfolio-static">
+                            <div class="thumbnail-inner">
+                                <div class="thumbnail">
+                                    <img src="/static/images/portfolio/dp-portfolio-01.jpg" alt="Portfolio Images">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="inner">
+                                    <p>Web Design</p>
+                                    <h4>T-shirt design is the part of design</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Single Gallery -->
+
+                    <!-- Start Single Gallery -->
+                    <a class="item-portfolio-static gallery col-lg-6 col-md-6"
+                        href="/static/images/portfolio/big/dp-big--portfolio-02.jpg">
+                        <div class="portfolio-static">
+                            <div class="thumbnail-inner">
+                                <div class="thumbnail">
+                                    <img src="/static/images/portfolio/dp-portfolio-02.jpg" alt="Portfolio Images">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="inner">
+                                    <p>App Development</p>
+                                    <h4>The service provide for designer</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Single Gallery -->
+
+                    <!-- Start Single Gallery -->
+                    <a class="item-portfolio-static gallery col-lg-6 col-md-6"
+                        href="/static/images/portfolio/big/dp-big--portfolio-03.jpg">
+                        <div class="portfolio-static">
+                            <div class="thumbnail-inner">
+                                <div class="thumbnail">
+                                    <img src="/static/images/portfolio/dp-portfolio-03.jpg" alt="Portfolio Images">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="inner">
+                                    <p>Web Design</p>
+                                    <h4>Mobile App landing Design</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Single Gallery -->
+
+                    <!-- Start Single Gallery -->
+                    <a class="item-portfolio-static gallery col-lg-6 col-md-6"
+                        href="/static/images/portfolio/big/dp-big--portfolio-04.jpg">
+                        <div class="portfolio-static">
+                            <div class="thumbnail-inner">
+                                <div class="thumbnail">
+                                    <img src="/static/images/portfolio/dp-portfolio-04.jpg" alt="Portfolio Images">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="inner">
+                                    <p>Web Design</p>
+                                    <h4>Logo Design creativity</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Single Gallery -->
+
+                    <!-- Start Single Gallery -->
+                    <a class="item-portfolio-static gallery col-lg-6 col-md-6"
+                        href="/static/images/portfolio/big/dp-big--portfolio-05.jpg">
+                        <div class="portfolio-static">
+                            <div class="thumbnail-inner">
+                                <div class="thumbnail">
+                                    <img src="/static/images/portfolio/dp-portfolio-05.jpg" alt="Portfolio Images">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="inner">
+                                    <p>Web Design</p>
+                                    <h4>Getting tickets to the big show</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Single Gallery -->
+
+                    <!-- Start Single Gallery -->
+                    <a class="item-portfolio-static gallery col-lg-6 col-md-6"
+                        href="/static/images/portfolio/big/dp-big--portfolio-06.jpg">
+                        <div class="portfolio-static">
+                            <div class="thumbnail-inner">
+                                <div class="thumbnail">
+                                    <img src="/static/images/portfolio/dp-portfolio-06.jpg" alt="Portfolio Images">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="inner">
+                                    <p>Web Design</p>
+                                    <h4>T-shirt design is the part of design</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- End Single Gallery -->
+                </div>
+            </div>
+        </div>
+        <!-- End Gallery Area  -->
+
+        <!-- Start Gallery Area  -->
+        <div class="rn-gallery-area rn-section-gap bg_color--1">
+            <div class="container">
+                <div class="row row row--5">
+                    <!-- Start Single Portfolio  -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="portfolio-style--3">
+                            <div class="thumbnail">
+                                <a href="{{ url_for('pages.portfolioDetails') }}">
+                                    <img class="w-100" src="/static/images/portfolio/portfolio-1.jpg"
+                                        alt="Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="portfoliotype">Development</p>
+                                <h4 class="title"><a href="{{ url_for('pages.portfolioDetails') }}">You can see your Portfolio</a>
+                                </h4>
+                                <div class="portfolio-btn">
+                                    <a class="rn-btn text-white" href="{{ url_for('pages.portfolioDetails') }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Portfolio  -->
+
+                    <!-- Start Single Portfolio  -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="portfolio-style--3">
+                            <div class="thumbnail">
+                                <a href="{{ url_for('pages.portfolioDetails') }}">
+                                    <img class="w-100" src="/static/images/portfolio/portfolio-2.jpg"
+                                        alt="Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="portfoliotype">Html</p>
+                                <h4 class="title"><a href="{{ url_for('pages.portfolioDetails') }}">Getting tickets to the big
+                                        show</a></h4>
+                                <div class="portfolio-btn">
+                                    <a class="rn-btn text-white" href="{{ url_for('pages.portfolioDetails') }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Portfolio  -->
+
+                    <!-- Start Single Portfolio  -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="portfolio-style--3">
+                            <div class="thumbnail">
+                                <a href="{{ url_for('pages.portfolioDetails') }}">
+                                    <img class="w-100" src="/static/images/portfolio/portfolio-3.jpg"
+                                        alt="Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="portfoliotype">Graphic</p>
+                                <h4 class="title"><a href="{{ url_for('pages.portfolioDetails') }}">You can see your Portfolio</a>
+                                </h4>
+                                <div class="portfolio-btn">
+                                    <a class="rn-btn text-white" href="{{ url_for('pages.portfolioDetails') }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Portfolio  -->
+
+                    <!-- Start Single Portfolio  -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="portfolio-style--3">
+                            <div class="thumbnail">
+                                <a href="{{ url_for('pages.portfolioDetails') }}">
+                                    <img class="w-100" src="/static/images/portfolio/portfolio-4.jpg"
+                                        alt="Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="portfoliotype">Freelancer</p>
+                                <h4 class="title"><a href="{{ url_for('pages.portfolioDetails') }}">You can see your Portfolio</a>
+                                </h4>
+                                <div class="portfolio-btn">
+                                    <a class="rn-btn text-white" href="{{ url_for('pages.portfolioDetails') }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Portfolio  -->
+
+                    <!-- Start Single Portfolio  -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="portfolio-style--3">
+                            <div class="thumbnail">
+                                <a href="{{ url_for('pages.portfolioDetails') }}">
+                                    <img class="w-100" src="/static/images/portfolio/portfolio-5.jpg"
+                                        alt="Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="portfoliotype">Freelancer</p>
+                                <h4 class="title"><a href="{{ url_for('pages.portfolioDetails') }}">The Language of Developer</a>
+                                </h4>
+                                <div class="portfolio-btn">
+                                    <a class="rn-btn text-white" href="{{ url_for('pages.portfolioDetails') }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Portfolio  -->
+
+                    <!-- Start Single Portfolio  -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="portfolio-style--3">
+                            <div class="thumbnail">
+                                <a href="{{ url_for('pages.portfolioDetails') }}">
+                                    <img class="w-100" src="/static/images/portfolio/portfolio-6.jpg"
+                                        alt="Portfolio Images">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="portfoliotype">Freelancer</p>
+                                <h4 class="title"><a href="{{ url_for('pages.portfolioDetails') }}">You can see your Portfolio</a>
+                                </h4>
+                                <div class="portfolio-btn">
+                                    <a class="rn-btn text-white" href="{{ url_for('pages.portfolioDetails') }}">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Portfolio  -->
+
+                </div>
+            </div>
+        </div>
+        <!-- End Gallery Area  -->
+
+
+    </main>
+    <!-- End Page Wrapper  -->
+
+{% endblock content %}
