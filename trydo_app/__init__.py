@@ -30,23 +30,39 @@ def register_error_handlers(app):
 def create_app(config_class=None):
     app = Flask(__name__, instance_relative_config=True)
 
-
-    config_path = os.path.join(app.instance_path, 'config.py')
-    config_env = os.environ.get('FLASK_CONFIG', 'development').lower()
-    config_class_name = {
-        'development': 'DevelopmentConfig',
-        'production': 'ProductionConfig',
-        'testing': 'TestingConfig',
-    }.get(config_env, 'DevelopmentConfig')
-
     if config_class is not None:
         app.config.from_object(config_class)
     else:
-        # Dynamically load config class from instance/config.py
-        spec = importlib.util.spec_from_file_location('instance_config', config_path)
-        instance_config = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(instance_config)
-        app.config.from_object(getattr(instance_config, config_class_name))
+        # Load config based on environment
+        config_path = os.path.join(app.instance_path, 'config.py')
+        config_env = os.environ.get('FLASK_CONFIG', 'development').lower()
+        config_class_name = {
+            'development': 'DevelopmentConfig',
+            'production': 'ProductionConfig',
+            'testing': 'TestingConfig',
+        }.get(config_env, 'DevelopmentConfig')
+
+        # Try to load from instance/config.py if it exists
+        if os.path.exists(config_path):
+            spec = importlib.util.spec_from_file_location('instance_config', config_path)
+            instance_config = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(instance_config)
+            app.config.from_object(getattr(instance_config, config_class_name))
+        else:
+            # Fallback to environment variables for production/serverless environments
+            app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-please-change')
+            app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///:memory:')
+            app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+            app.config['SESSION_COOKIE_HTTPONLY'] = True
+            app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+            app.config['PERMANENT_SESSION_LIFETIME'] = 3600
+            
+            if config_env == 'production':
+                app.config['DEBUG'] = False
+                app.config['SESSION_COOKIE_SECURE'] = True
+            else:
+                app.config['DEBUG'] = True
+                app.config['SESSION_COOKIE_SECURE'] = False
 
     # Ensure instance folder exists for deployment environments
     instance_path = app.instance_path
