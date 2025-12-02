@@ -1,0 +1,12 @@
+/* Custom overrides and adjustments for Svelte components */
+/* The main styles are loaded from /css/style.css in index.html */
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove any default Svelte styles that might conflict */
+#app {
+  width: 100%;
+}

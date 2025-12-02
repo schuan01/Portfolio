@@ -1,76 +1,124 @@
+# Portfolio Website
 
-## Install Python Dependencies
+A modern, responsive portfolio website migrated from Flask to Svelte, based on the Trydo template's personalPortfolio design.
 
-    pip install -r requirements.txt
+## Features
 
-## Install Node & SCSS Dependencies (for styling)
+- ✨ Professional portfolio design from Trydo template
+- 🚀 Built with Svelte 5 and TypeScript
+- ⚡ Lightning-fast with Vite
+- 📱 Fully responsive design
+- 🎨 Complete CSS from original Trydo template
+- 📧 Contact form with validation
+- 🎯 Project showcase section with tabs
 
-    npm install
-
-## Set Environment Variables in .env file if not available Create a .env file in the project root:
-
-    # Flask settings
-    FLASK_APP=trydo_app/app.py
-    FLASK_ENV=development
-    FLASK_CONFIG=development
-    SECRET_KEY=your-secret-key asd
-    # Database
-    SQLALCHEMY_DATABASE_URI=sqlite:///Trydo.db
-    SQLALCHEMY_TRACK_MODIFICATIONS=False
-    # CSRF
-    WTF_CSRF_ENABLED=True
-    # Other settings (add as needed)
-    MAIL_SERVER=smtp.example.com
-    MAIL_PORT=587
-    MAIL_USE_TLS=True
-    MAIL_USERNAME=your-email@example.com
-    MAIL_PASSWORD=your-email-password
-
-
-## Database Migrations
-
-To manage your database schema using Flask-Migrate, use the following commands:
+## Project Structure
 
 ```
-flask db init
-flask db migrate -m "Initial migration."
-flask db upgrade
+Portfolio-svelte/
+├── public/
+│   ├── css/              # All Trydo CSS files
+│   │   ├── style.css     # Main stylesheet
+│   │   ├── vendor/       # Bootstrap, FontAwesome, etc.
+│   │   └── plugins/      # Additional plugins
+│   ├── js/               # JavaScript files
+│   │   ├── main.js       # Main JS functionality
+│   │   └── vendor/       # jQuery, Bootstrap, etc.
+│   ├── images/           # All image assets
+│   └── fonts/            # Font files
+├── src/
+│   ├── lib/
+│   │   ├── Header.svelte      # Navigation header with social links
+│   │   ├── Hero.svelte         # Hero/banner section
+│   │   ├── About.svelte        # About with tabbed content
+│   │   ├── Clients.svelte      # Client logos section
+│   │   ├── Projects.svelte     # Portfolio projects grid
+│   │   ├── Contact.svelte      # Contact form
+│   │   └── Footer.svelte       # Footer with links
+│   ├── App.svelte              # Main app component
+│   ├── app.css                 # Custom overrides
+│   └── main.ts                 # App entry point
+└── index.html                  # Loads all CSS/JS from Trydo template
 ```
 
-- `flask db init`: Initialize the migrations directory (run once).
-- `flask db migrate -m "Message"`: Generate a migration script after model changes.
-- `flask db upgrade`: Apply migrations to the database.
+## Getting Started
 
+### Prerequisites
 
-## Building CSS from SCSS
+- Node.js (v16 or higher)
+- npm or pnpm
 
-To compile SCSS to CSS, run:
+### Installation
 
-    npm run build:css
+1. Install dependencies:
+```bash
+npm install
+```
 
-This will compile all SCSS files in `trydo_app/static/scss/` to CSS in `trydo_app/static/css/`.
+2. Start the development server:
+```bash
+npm run dev
+```
 
+3. Open your browser and navigate to `http://localhost:5173`
 
-## run project (For Deployment)
-    flask run
+## Available Scripts
 
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run check` - Run type checking
 
-## Production Deployment
+## Customization
 
-1. **Install Gunicorn** (or another WSGI server):
+### Personalize Your Portfolio
 
-    pip install gunicorn
+1. **Hero Section** (`src/lib/Hero.svelte`):
+   - Update your name, title, and description
 
-2. **Run the app with Gunicorn:**
+2. **About Section** (`src/lib/About.svelte`):
+   - Add your bio and update skills list
 
-    gunicorn -w 4 -b 0.0.0.0:8000 wsgi:app
+3. **Projects Section** (`src/lib/Projects.svelte`):
+   - Add your projects with descriptions and links
 
-   (If your wsgi.py is in the root. If it's in trydo_app/, use trydo_app.wsgi:app)
+4. **Contact Section** (`src/lib/Contact.svelte`):
+   - Configure form submission (currently logs to console)
 
-3. **(Optional) Use a reverse proxy (e.g., Nginx) in front of Gunicorn for SSL, static files, etc.**
+5. **Footer** (`src/lib/Footer.svelte`):
+   - Update social media links
 
-4. **Set environment variables for production:**
+### Styling
 
-    - `FLASK_CONFIG=production`
-    - `SECRET_KEY=your-production-secret`
-    - `DATABASE_URL=your-production-db-url`
+- Global styles are in `src/app.css`
+- Component-specific styles are scoped within each `.svelte` file
+
+## Deployment
+
+Build the project for production:
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory, ready to deploy to any static hosting service like:
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
+
+## Technologies Used
+
+- **Svelte 5** - Frontend framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **CSS3** - Styling
+
+## Recommended IDE Setup
+
+[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
+
+## License
+
+MIT License - feel free to use this template for your own portfolio!
+
