@@ -3887,7 +3887,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 .bg_image--16 {
-  background-image: url(../images/bg/bg-image-16.jpg);
+  background-image: url(../images/bg/bg-games.jpeg);
 }
 
 .bg_image--17 {
@@ -10881,10 +10881,10 @@ Footer Style Two
   background-image: url(../images/portfolio/portfolio-2.jpg);
 }
 .portfolio .thumbnail.image-3 {
-  background-image: url(../images/portfolio/portfolio-3.jpg);
+  background-image: url(../images/portfolio/starship-390x532.png);
 }
 .portfolio .thumbnail.image-4 {
-  background-image: url(../images/portfolio/portfolio-4.jpg);
+  background-image: url(../images/portfolio/dauntless-390x532.jpg);
 }
 .portfolio .thumbnail.image-5 {
   background-image: url(../images/portfolio/portfolio-5.jpg);
@@ -10893,13 +10893,13 @@ Footer Style Two
   background-image: url(../images/portfolio/portfolio-6.jpg);
 }
 .portfolio .thumbnail.image-7 {
-  background-image: url(../images/portfolio/portfolio-7.jpg);
+  background-image: url(../images/portfolio/fortnite-390x532.jpg);
 }
 .portfolio .thumbnail.image-8 {
-  background-image: url(../images/portfolio/portfolio-8.jpg);
+  background-image: url(../images/portfolio/sims4-390x532.jpg);
 }
 .portfolio .thumbnail.image-9 {
-  background-image: url(../images/portfolio/portfolio-9.jpg);
+  background-image: url(../images/portfolio/fortnite-390x532.jpg);
 }
 .portfolio .thumbnail::after {
   background-color: rgba(45, 45, 45, 0.35);

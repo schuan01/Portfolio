@@ -2,10 +2,7 @@
   import { onMount } from 'svelte'
   
   const socialLinks = [
-    { icon: 'fab fa-facebook-f', url: '#' },
-    { icon: 'fab fa-linkedin-in', url: '#' },
-    { icon: 'fab fa-twitter', url: '#' },
-    { icon: 'fab fa-instagram', url: '#' }
+    { icon: 'fab fa-linkedin-in', url: '#' }
   ]
 
   onMount(() => {
@@ -43,7 +40,6 @@
           {/each}
         </ul>
       </div>
-      <div class="header-btn ml_md--20 ml_sm--0"><a class="rn-btn" href="https://juan.volpe.uy"><span>buy now</span></a></div>
       <div class="humberger-menu d-block d-lg-none pl--20 pl_sm--10">
         <span class="menutrigger text-white">
           <i data-feather="menu"></i>

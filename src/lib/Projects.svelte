@@ -1,12 +1,8 @@
 <script lang="ts">
-  const portfolioItems = [
-    { imageClass: 'image-8', category: 'Development', title: 'Getting tickets to the big show' },
-    { imageClass: 'image-7', category: 'Development', title: 'Getting tickets to the big show' },
-    { imageClass: 'image-3', category: 'Development', title: 'Getting tickets to the big show' },
-    { imageClass: 'image-4', category: 'Development', title: 'Getting tickets to the big show' },
-    { imageClass: 'image-3', category: 'Development', title: 'Getting tickets to the big show' },
-    { imageClass: 'image-2', category: 'Development', title: 'Getting tickets to the big show' }
-  ]
+  import { portfolioData } from './portfolioData'
+  import { push } from 'svelte-spa-router'
+
+  const goToDetails = (id: string) => push(`/portfolio-details/${id}`)
 </script>
 
 <div class="rn-portfolio-area rn-section-gapBottom bg_color--1">
@@ -20,19 +16,19 @@
       </div>
     </div>
     <div class="row">
-      {#each portfolioItems as item}
+      {#each portfolioData as item}
         <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt--30">
           <div class="portfolio text-center">
-            <div class="thumbnail-inner">
+            <div class="thumbnail-inner" role="link" tabindex="0" on:click={() => goToDetails(item.id)} on:keydown={(e) => e.key === 'Enter' && goToDetails(item.id)}>
               <div class="thumbnail {item.imageClass}"></div>
               <div class="bg-blr-image {item.imageClass}"></div>
             </div>
             <div class="content">
               <div class="inner">
                 <p>{item.category}</p>
-                <h4><a href="https://juan.volpe.uy">{item.title}</a></h4>
+                <h4><a href="#/portfolio-details/{item.id}">{item.title}</a></h4>
                 <div class="portfolio-button">
-                  <a class="rn-btn" href="https://juan.volpe.uy">Case Study</a>
+                  <a class="rn-btn" href="#/portfolio-details/{item.id}">Case Study</a>
                 </div>
               </div>
             </div>
@@ -40,12 +36,12 @@
         </div>
       {/each}
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-12">
         <div class="view-more-btn mt--60 mt_sm--30 text-center">
-          <a class="rn-button-style--2 btn_solid" href="https://juan.volpe.uy">View More</a>
+          <a class="rn-button-style--2 btn_solid" href="/">View More</a>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

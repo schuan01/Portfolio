@@ -6,7 +6,8 @@
 </script>
 
 <div class="rn-slider-area">
-  <div class="slide personal-portfolio-slider slider-paralax slider-style-3 d-flex align-items-center justify-content-center bg_image bg_image--16">
+  <div class="slide personal-portfolio-slider slider-paralax slider-style-3 d-flex align-items-center justify-content-center">
+  <!-- <div class="slide personal-portfolio-slider slider-paralax slider-style-3 d-flex align-items-center justify-content-center bg_image bg_image--16"> -->
     <div class="container">
       <div class="row">
         <div class="col-lg-12">

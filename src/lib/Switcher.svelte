@@ -39,18 +39,18 @@
         }
 
         // Set Click
-        $('#my_switcher .setColor').on('click', function() {
+        $('#my_switcher .setColor').on('click', function(this: HTMLElement) {
           $(this).closest('ul').find('li').siblings().find('.active').removeClass('active')
           $(this).addClass('active')
           setStyleCookie()
         })
 
         // Add or Remove Class into body when click switcher
-        $('#my_switcher .setColor.dark').on('click', function() {
+        $('#my_switcher .setColor.dark').on('click', function(this: HTMLElement) {
           $('body').removeClass('active-light-mode').addClass('active-dark-mode')
           setStyleCookie()
         })
-        $('#my_switcher .setColor.light').on('click', function() {
+        $('#my_switcher .setColor.light').on('click', function(this: HTMLElement) {
           $('body').removeClass('active-dark-mode').addClass('active-light-mode')
           setStyleCookie()
         })

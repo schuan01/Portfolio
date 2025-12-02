@@ -8,7 +8,7 @@
       <div class="row row--35 align-items-center">
         <div class="col-lg-5">
           <div class="thumbnail">
-            <img class="w-100" src="/images/about/about-5.jpg" alt="About Images" />
+            <img class="w-100" src="/images/about/profile-495x780.jpg" alt="About Images" />
           </div>
         </div>
         <div class="col-lg-7">
