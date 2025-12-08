@@ -6,17 +6,22 @@
   
   let portfolio: PortfolioItem | undefined
   let relatedProjects: PortfolioItem[] = []
+  let previousId: string | undefined
   
   onMount(() => {
     if (params.id) {
       portfolio = getPortfolioById(params.id)
+      previousId = params.id
     }
   })
   
   $: if (params.id) {
     portfolio = getPortfolioById(params.id)
-    // Scroll to top when portfolio changes
-    window.scrollTo({ top: 0, behavior: 'instant' })
+    // Only scroll to top when navigating between different portfolios
+    if (previousId && previousId !== params.id) {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
+    previousId = params.id
     // Get 2 random related projects (excluding current)
     import('./portfolioData').then(({ portfolioData }) => {
       relatedProjects = portfolioData
@@ -57,22 +62,33 @@
               <p>{portfolio.description}</p>
               <div class="portfolio-view-list d-flex flex-wrap">
                 <div class="port-view">
-                  <span>Branch</span>
-                  <h4>{portfolio.branch}</h4>
+                  <span>Area</span>
+                  <h4>{portfolio.area}</h4>
                 </div>
                 <div class="port-view">
-                  <span>Project Types</span>
-                  <h4>{portfolio.projectType}</h4>
+                  <span>Platforms</span>
+                  <h4>{portfolio.platform}</h4>
                 </div>
                 <div class="port-view">
-                  <span>Program</span>
-                  <h4>{portfolio.program}</h4>
+                  <span>Company</span>
+                  <h4>{portfolio.company}</h4>
                 </div>
               </div>
               <div class="portfolio-share-link mt--20 pb--70 pb_sm--40">
                 <ul class="social-share rn-lg-size d-flex justify-content-start liststyle mt--15">
-                  {#if portfolio.socialLinks.facebook}
-                    <li><a href={portfolio.socialLinks.facebook}><i data-feather="facebook"></i></a></li>
+                  {#if portfolio.socialLinks.steam}
+                    <li>
+                      <a href={portfolio.socialLinks.steam} aria-label="Steam">
+                        <img src="/images/icons/steam-icon.svg" alt="Steam" class="icon-steam" />
+                      </a>
+                    </li>
+                  {/if}
+                  {#if portfolio.socialLinks.epic}
+                    <li>
+                      <a href={portfolio.socialLinks.epic} aria-label="Epic Games">
+                        <img src="/images/icons/epic-icon.svg" alt="Epic Games" class="icon-epic" />
+                      </a>
+                    </li>
                   {/if}
                   {#if portfolio.socialLinks.linkedin}
                     <li><a href={portfolio.socialLinks.linkedin}><i data-feather="linkedin"></i></a></li>
@@ -86,6 +102,113 @@
                 </ul>
               </div>
             </div>
+            <!-- Start Blog Details Area  -->
+        <div class="rn-blog-details pt--110 pb--70 bg_color--1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner-wrapper">
+                            <div class="inner">
+                                <h4 class="title">Main Responsibilities</h4>
+                                <ul class="list-style">
+                                    <li>Leading UI Engineering team</li>
+                                    <li>Prosal and </li>
+                                    <li>Abominable this abidin far successfully then like piquan</li>
+                                    <li>Risus commodo viverra</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                                </ul>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                    have suffered alteration in some form, by injected humour, or randomised words
+                                    which don't look even slightly believable. If you are going to use a passage of
+                                    Lorem Ipsum. You need to be sure there isn't anything embarrassing hidden in the
+                                    middle of text. All the Lorem Ipsum generators on the Internet tend toitrrepeat
+                                    predefined chunks. </p>
+                                <div class="thumbnail">
+                                    <img src="/static/images/blog/bl-big-01.jpg" alt="Blog Images">
+                                </div>
+                                <p class="mt--40">There are many variations of passages of Lorem Ipsum available,
+                                    but the majority have suffered alteration in some form, by injected humour, or
+                                    randomised words which don't look even slightly believable. If you are going to
+                                    use a passage of Lorem Ipsum. You need to be sure there isn't anything
+                                    embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
+                                    Internet tend toitrrepeat predefined chunks. </p>
+                                <p>Necessary, making this the first true generator on the Internet. It re are many
+                                    variations of passages of Lo rem Ipsum available, but the majority have suffered
+                                    alteration in some form, by injectedeed eedhumour, or randomised words which
+                                    don't look even slightly believable.</p>
+                                <blockquote class="rn-blog-quote">Lorem ipsum dolor sit amet, consectetuer
+                                    adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                                    natoque penatibus et magnis dis parturient montes.</blockquote>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                    have suffered alteration in some form, by injected humour, or randomised words
+                                    which don't look even slightly believable. If you are going to use a passage of
+                                    Lorem Ipsum. You need to be sure there isn't anything embarrassing hidden in the
+                                    middle of text. All the Lorem Ipsum generators on the Internet tend toitrrepeat
+                                    predefined chunks. Necessary, making this the first true generator on the
+                                    Internet. It re are many variations of passages of Lorem Ipsum available, but
+                                    the majority have suffered alteration in some form, by injectedeed eedhumour, or
+                                    randomised words which don't look even slightly believable.</p>
+                                <div class="blog-single-list-wrapper d-flex flex-wrap">
+                                    <div class="thumbnail"><img class="w-100"
+                                            src="/static/images/blog/blog-single-01.png"
+                                            alt="BLog Images"><span>Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit, sed do</span></div>
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                            suspendisse ultrices gravida. Risus commodo .</p>
+                                        <h4 class="title">Ordered &amp; Unordered Lists.</h4>
+                                        <ul class="list-style">
+                                            <li>Yet this above sewed flirted opened ouch</li>
+                                            <li>Goldfinch realistic sporadic ingenuous</li>
+                                            <li>Abominable this abidin far successfully then like piquan</li>
+                                            <li>Risus commodo viverra</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+                                        </ul>
+                                        <h4 class="title">Ordered &amp; Unordered Lists.</h4>
+                                        <ul class="list-style">
+                                            <li>Yet this above sewed flirted opened ouch</li>
+                                            <li>Goldfinch realistic sporadic ingenuous</li>
+                                            <li>Abominable this abidin far successfully then like piquan</li>
+                                            <li>Risus commodo viverra</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="mt--25 mt_sm--5">There are many variations of passages of Lorem Ipsum
+                                    available, but the majority have suffered alteration in some form, by injected
+                                    humour, or randomised words which don't look even slightly believable. If you
+                                    are going to use a passage of Lorem Ipsum. You need to be sure there isn't
+                                    anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                                    generators on the Internet tend toitrrepeat predefined chunks. Necessary, making
+                                    this the first true generator on the Internet. It re are many variations of
+                                    passages of Lorem Ipsum available, but the majority have suffered alteration in
+                                    some form, by injectedeed eedhumour, or randomised words which don't look even
+                                    slightly believable.</p>
+                                <div class="video-wrapper position-relative mb--40">
+                                    <div class="thumbnail">
+                                        <img src="/static/images/blog/bl-big-01.jpg" alt="Blog Images">
+                                    </div>
+                                    <a class="video-popup position-top-center play__btn"
+                                        href="https://www.youtube.com/watch?v=ZOoVOfieAF8"><span
+                                            class="play-icon"></span></a>
+                                </div>
+                                <p class="mb--0">There are many variations of passages of Lorem Ipsum available, but
+                                    the majority have suffered alteration in some form, by injected humour, or
+                                    randomised words which don't look even slightly believable. If you are going to
+                                    use a passage of Lorem Ipsum. You need to be sure there isn't anything
+                                    embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
+                                    Internet tend toitrrepeat predefined chunks. Necessary, making this the first
+                                    true generator on the Internet. It re are many variations of passages of Lorem
+                                    Ipsum available, but the majority have suffered alteration in some form, by
+                                    injectedeed eedhumour, or randomised words which don't look even slightly
+                                    believable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Blog Details Area  -->
             <div class="portfolio-thumb-inner">
               <div class="thumb position-relative mb--30">
                 <img src={portfolio.mainImage} alt={portfolio.title} />

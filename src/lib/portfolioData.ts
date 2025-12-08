@@ -7,9 +7,9 @@ export interface PortfolioItem {
   headerTextColor: string
   subtitle: string
   description: string
-  branch: string
-  projectType: string
-  program: string
+  area: string
+  platform: string
+  company: string
   mainImage: string
   videoUrl?: string
   additionalImages: string[]
@@ -18,6 +18,8 @@ export interface PortfolioItem {
     linkedin?: string
     instagram?: string
     twitter?: string
+    steam?: string
+    epic?: string
   }
 }
 
@@ -29,11 +31,11 @@ export const portfolioData: PortfolioItem[] = [
     imageClass: 'image-8',
     headerBgClass: 'bg_image--4',
     headerTextColor: 'color-white',
-    subtitle: 'A life simulation game where players create and control virtual people.',
-    description: 'The Sims 4 is a life simulation game that allows players to create and control people in a virtual world. Players can customize their Sims appearance, personality, and home, and guide them through various life stages and careers.',
-    branch: 'Game Development',
-    projectType: 'AAA Game',
-    program: 'EA Games',
+    subtitle: 'The Sims 4 is a social simulation game developed by Maxis and published by Electronic Arts',
+    description: 'Play with life and discover the possibilities. Unleash your imagination and create a world of Sims that’s wholly unique. Explore and customize every detail from Sims to homes–and much more.',
+    area: 'Game Development',
+    platform: 'PC, Mac, Consoles',
+    company: 'Maxis/EA Games',
     mainImage: '/images/bg/sims-other.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
@@ -41,10 +43,8 @@ export const portfolioData: PortfolioItem[] = [
       '/images/portfolio/portfolio-big-01.jpg'
     ],
     socialLinks: {
-      facebook: '#',
-      linkedin: '#',
-      instagram: '#',
-      twitter: '#'
+      linkedin: 'https://www.linkedin.com/company/maxis-ea/',
+      steam: 'https://store.steampowered.com/app/1222670/The_Sims_4/'
     }
   },
   {
@@ -56,9 +56,9 @@ export const portfolioData: PortfolioItem[] = [
     headerTextColor: 'color-white',
     subtitle: 'Battle royale game that became a global phenomenon.',
     description: 'Fortnite is a free-to-play battle royale game where 100 players fight to be the last person standing. The game features building mechanics, regular content updates, and cross-platform play.',
-    branch: 'Game Development',
-    projectType: 'Live Service Game',
-    program: 'Epic Games',
+    area: 'Game Development',
+    platform: 'PC, Consoles, Mobile',
+    company: 'Epic Games',
     mainImage: '/images/bg/fortnite-other.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
@@ -66,10 +66,8 @@ export const portfolioData: PortfolioItem[] = [
       '/images/portfolio/portfolio-big-01.jpg'
     ],
     socialLinks: {
-      facebook: '#',
-      linkedin: '#',
-      instagram: '#',
-      twitter: '#'
+      epic: 'https://store.epicgames.com/es-ES/p/fortnite',
+      linkedin: 'https://www.linkedin.com/company/fortnite-us/'
     }
   },
   {
@@ -81,9 +79,9 @@ export const portfolioData: PortfolioItem[] = [
     headerTextColor: 'color-white',
     subtitle: 'Cooperative FPS game based on the iconic franchise.',
     description: 'Starship Troopers: Extermination is a 16-player co-op FPS where squads of Troopers team up to battle against hordes of alien bugs. Players must work together to complete objectives and survive.',
-    branch: 'Game Development',
-    projectType: 'Multiplayer FPS',
-    program: 'Offworld Industries',
+    area: 'Game Development',
+    platform: 'PC & Consoles',
+    company: 'Offworld Industries',
     mainImage: '/images/bg/troopers-other.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
@@ -94,7 +92,8 @@ export const portfolioData: PortfolioItem[] = [
       facebook: '#',
       linkedin: '#',
       instagram: '#',
-      twitter: '#'
+      twitter: '#',
+      steam: '#'
     }
   },
   {
@@ -106,9 +105,9 @@ export const portfolioData: PortfolioItem[] = [
     headerTextColor: 'color-white',
     subtitle: 'Free-to-play co-op action RPG with monster hunting gameplay.',
     description: 'Dauntless is a free-to-play online action RPG where players hunt down ferocious Behemoths. Team up with friends to take on epic boss battles and craft powerful weapons and armor.',
-    branch: 'Game Development',
-    projectType: 'Action RPG',
-    program: 'Phoenix Labs',
+    area: 'Game Development',
+    platform: 'PC & Consoles',
+    company: 'Phoenix Labs',
     mainImage: '/images/bg/dauntless-other.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
@@ -119,7 +118,8 @@ export const portfolioData: PortfolioItem[] = [
       facebook: '#',
       linkedin: '#',
       instagram: '#',
-      twitter: '#'
+      twitter: '#',
+      steam: '#'
     }
   }
 ]

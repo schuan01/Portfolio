@@ -10502,7 +10502,14 @@ ul.social-share li a {
   color: rgba(198, 201, 216, 0.75);
   border-radius: 100%;
   text-align: center;
+  align-content: center;
   font-size: 14px;
+}
+ul.social-share li a img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  transform: translateY(-1px);
 }
 ul.social-share li:hover a {
   background: #f9004d;

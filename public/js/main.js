@@ -224,7 +224,7 @@ Index All JS
     $.scrollUp({
         scrollText: '<i class="fa fa-angle-up"></i>',
         easingType: 'linear',
-        scrollSpeed: 900,
+        scrollSpeed: 1,
         animation: 'slide'
     });
     
