@@ -1,11 +1,11 @@
 <script lang="ts">
   const brands = [
-    '/images/brand/brand-01.png',
-    '/images/brand/brand-02.png',
-    '/images/brand/brand-03.png',
-    '/images/brand/brand-04.png',
-    '/images/brand/brand-05.png',
-    '/images/brand/brand-06.png'
+    '/images/brand/c-logo-black-and-white-2.png',
+    '/images/brand/256px-UE_Logo_Black_Centered.png',
+    '/images/brand/256px-Unity_2021.png',
+    '/images/brand/c-sharp.png',
+    '/images/brand/Perforce.png',
+    '/images/brand/256px-Git-logo-black.png'
   ]
 </script>
 
@@ -14,8 +14,8 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title section-title--2 text-center mb--60">
-          <h2 class="title">My Best Client</h2>
-          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+          <h2 class="title">Tech Stack</h2>
+          <p>As a Game Developer, I have been working with different techologies, here are the main ones:</p>
         </div>
       </div>
     </div>

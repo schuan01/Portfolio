@@ -2,7 +2,7 @@
   const subtitle = "Senior Game Developer"
   const name = "Juan"
   const greeting = "Hello, I'm"
-  const tagline = "Welcome to my World."
+  const tagline = "Welcome to my Portfolio."
 </script>
 
 <div class="rn-slider-area">

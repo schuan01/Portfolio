@@ -3,6 +3,8 @@ export interface PortfolioItem {
   title: string
   category: string
   imageClass: string
+  headerBgClass: string
+  headerTextColor: string
   subtitle: string
   description: string
   branch: string
@@ -25,12 +27,14 @@ export const portfolioData: PortfolioItem[] = [
     title: 'The Sims 4',
     category: 'Development',
     imageClass: 'image-8',
+    headerBgClass: 'bg_image--4',
+    headerTextColor: 'color-white',
     subtitle: 'A life simulation game where players create and control virtual people.',
     description: 'The Sims 4 is a life simulation game that allows players to create and control people in a virtual world. Players can customize their Sims appearance, personality, and home, and guide them through various life stages and careers.',
     branch: 'Game Development',
     projectType: 'AAA Game',
     program: 'EA Games',
-    mainImage: '/images/portfolio/portfolio-big-03.jpg',
+    mainImage: '/images/bg/sims-other.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
       '/images/portfolio/portfolio-big-02.jpg',
@@ -48,12 +52,14 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Fortnite',
     category: 'Development',
     imageClass: 'image-7',
+    headerBgClass: 'bg_image--7',
+    headerTextColor: 'color-white',
     subtitle: 'Battle royale game that became a global phenomenon.',
     description: 'Fortnite is a free-to-play battle royale game where 100 players fight to be the last person standing. The game features building mechanics, regular content updates, and cross-platform play.',
     branch: 'Game Development',
     projectType: 'Live Service Game',
     program: 'Epic Games',
-    mainImage: '/images/portfolio/portfolio-big-03.jpg',
+    mainImage: '/images/bg/fortnite-other.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
       '/images/portfolio/portfolio-big-02.jpg',
@@ -68,15 +74,17 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: 'starship-troopers',
-    title: 'Starship Troopers Extermination',
+    title: 'Starship Troopers: Extermination',
     category: 'Development',
     imageClass: 'image-3',
+    headerBgClass: 'bg_image--5',
+    headerTextColor: 'color-white',
     subtitle: 'Cooperative FPS game based on the iconic franchise.',
     description: 'Starship Troopers: Extermination is a 16-player co-op FPS where squads of Troopers team up to battle against hordes of alien bugs. Players must work together to complete objectives and survive.',
     branch: 'Game Development',
     projectType: 'Multiplayer FPS',
     program: 'Offworld Industries',
-    mainImage: '/images/portfolio/portfolio-big-03.jpg',
+    mainImage: '/images/bg/troopers-other.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
       '/images/portfolio/portfolio-big-02.jpg',
@@ -94,12 +102,14 @@ export const portfolioData: PortfolioItem[] = [
     title: 'Dauntless',
     category: 'Development',
     imageClass: 'image-4',
+    headerBgClass: 'bg_image--9',
+    headerTextColor: 'color-white',
     subtitle: 'Free-to-play co-op action RPG with monster hunting gameplay.',
     description: 'Dauntless is a free-to-play online action RPG where players hunt down ferocious Behemoths. Team up with friends to take on epic boss battles and craft powerful weapons and armor.',
     branch: 'Game Development',
     projectType: 'Action RPG',
     program: 'Phoenix Labs',
-    mainImage: '/images/portfolio/portfolio-big-03.jpg',
+    mainImage: '/images/bg/dauntless-other.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
       '/images/portfolio/portfolio-big-02.jpg',

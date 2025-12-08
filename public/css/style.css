@@ -1,8 +1,5 @@
 /*********************************************************************************
 
-	Template Name: Trydo Html Creative Agency Template
-	Note: This is style css.
-
 **********************************************************************************/
 /**************************************************************
 
@@ -3887,7 +3884,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 .bg_image--16 {
-  background-image: url(../images/bg/bg-games.jpeg);
+  background-image: url(../images/bg/bg-image-16.jpg);
 }
 
 .bg_image--17 {
@@ -10881,10 +10878,10 @@ Footer Style Two
   background-image: url(../images/portfolio/portfolio-2.jpg);
 }
 .portfolio .thumbnail.image-3 {
-  background-image: url(../images/portfolio/starship-390x532.png);
+  background-image: url(../images/portfolio/portfolio-3.jpg);
 }
 .portfolio .thumbnail.image-4 {
-  background-image: url(../images/portfolio/dauntless-390x532.jpg);
+  background-image: url(../images/portfolio/portfolio-4.jpg);
 }
 .portfolio .thumbnail.image-5 {
   background-image: url(../images/portfolio/portfolio-5.jpg);
@@ -10893,13 +10890,13 @@ Footer Style Two
   background-image: url(../images/portfolio/portfolio-6.jpg);
 }
 .portfolio .thumbnail.image-7 {
-  background-image: url(../images/portfolio/fortnite-390x532.jpg);
+  background-image: url(../images/portfolio/portfolio-7.jpg);
 }
 .portfolio .thumbnail.image-8 {
-  background-image: url(../images/portfolio/sims4-390x532.jpg);
+  background-image: url(../images/portfolio/portfolio-8.jpg);
 }
 .portfolio .thumbnail.image-9 {
-  background-image: url(../images/portfolio/fortnite-390x532.jpg);
+  background-image: url(../images/portfolio/portfolio-9.jpg);
 }
 .portfolio .thumbnail::after {
   background-color: rgba(45, 45, 45, 0.35);
@@ -13790,6 +13787,14 @@ ul.nav.tab-style--1 li a.active::before {
 .single-tab-content ul li a span {
   font-weight: 300;
 }
+.single-tab-content ul li p {
+  font-weight: 500;
+  display: block;
+  color: #717173;
+}
+.single-tab-content ul li p span {
+  font-weight: 300;
+}
 
 .accodion-style--1 .accordion__item {
   border: none !important;
@@ -15173,7 +15178,7 @@ BLog Details Styles
   }
 }
 .portfolio-details .inner h2 {
-  line-height: 27px;
+  line-height: 50px;
   display: block;
   margin-bottom: 0;
   padding-bottom: 43px;

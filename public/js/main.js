@@ -1,7 +1,4 @@
 /*------------------------------------------------
-Trydo Html5 Creative Ahency Template
-All Main Js Here  
-
 Index All JS 
 -----------------------
         01. Wow Active

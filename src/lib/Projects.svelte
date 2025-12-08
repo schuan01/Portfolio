@@ -10,8 +10,8 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title section-title--2 text-center mb--30">
-          <h2 class="title">My Latest Project</h2>
-          <p>There are many variations of passages of Lorem Ipsum available, <br /> but the majority have suffered alteration.</p>
+          <h2 class="title">My Latest Projects</h2>
+          <!-- <p>There are many variations of passages of Lorem Ipsum available, <br /> but the majority have suffered alteration.</p> -->
         </div>
       </div>
     </div>

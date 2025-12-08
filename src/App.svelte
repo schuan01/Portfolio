@@ -14,12 +14,28 @@
     '/portfolio-details/:id': PortfolioDetails
   }
 
-  // Scroll to top on route change
+  // Smooth scroll to section or top on route/hash change
   $: if ($location) {
-    window.scrollTo({ top: 0 })
+    const hash = window.location.hash.substring(1) // Remove '#'
+    
+    if (hash && hash !== '/') {
+      // If there's a hash fragment (like #about), scroll to it smoothly
+      setTimeout(() => {
+        const element = document.getElementById(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 100)
+    } else {
+      // Otherwise scroll to top smoothly
+      window.scrollTo({ top: 0 })
+    }
   }
 
   onMount(() => {
+    // Enable smooth scrolling in CSS
+    document.documentElement.style.scrollBehavior = 'smooth'
+    
     // Load main.js after Svelte components are mounted
     const script = document.createElement('script')
     script.src = '/js/main.js'

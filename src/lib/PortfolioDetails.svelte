@@ -15,6 +15,8 @@
   
   $: if (params.id) {
     portfolio = getPortfolioById(params.id)
+    // Scroll to top when portfolio changes
+    window.scrollTo({ top: 0, behavior: 'instant' })
     // Get 2 random related projects (excluding current)
     import('./portfolioData').then(({ portfolioData }) => {
       relatedProjects = portfolioData
@@ -27,7 +29,7 @@
 
 {#if portfolio}
 <!-- Start breadcrumb Area -->
-<div class="rn-page-title-area pt--120 pb--190 pb_md--100 pb_sm--100 bg_image bg_image--4" data-black-overlay="5">
+<div class="rn-page-title-area pt--120 pb--190 pb_md--100 pb_sm--100 bg_image {portfolio.headerBgClass}" data-black-overlay="5">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -116,7 +118,7 @@
         <div class="col-lg-12">
           <div class="section-title text-center">
             <span class="theme-color font--18 fontWeight600">Related Work</span>
-            <h2>Our More Projects</h2>
+            <h2>Other Projects</h2>
           </div>
         </div>
       </div>

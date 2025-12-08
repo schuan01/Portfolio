@@ -10,7 +10,7 @@
         <div class="inner">
           <div class="logo text-center text-sm-start mb_sm--20">
             <a href="#/">
-              <img src="/images/logo/logo.png" alt="Logo images" />
+              <img src="/images/logo/jv-logo-60x60.png" alt="Logo images" />
             </a>
           </div>
         </div>
@@ -18,7 +18,7 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-12">
         <div class="inner text-center">
           <ul class="social-share rn-lg-size d-flex justify-content-center liststyle">
-            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/juan-volpe/" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a></li>
           </ul>
         </div>
       </div>
