@@ -7,11 +7,26 @@
   let portfolio: PortfolioItem | undefined
   let relatedProjects: PortfolioItem[] = []
   let previousId: string | undefined
+  let customContent: string = ''
+  
+  async function loadCustomContent(path: string) {
+    try {
+      // Use dynamic import with ?raw to enable HMR
+      const module = await import(/* @vite-ignore */ `${path}?raw`)
+      customContent = module.default
+    } catch (error) {
+      console.error('Failed to load custom content:', error)
+      customContent = ''
+    }
+  }
   
   onMount(() => {
     if (params.id) {
       portfolio = getPortfolioById(params.id)
       previousId = params.id
+      if (portfolio?.customContentPath) {
+        loadCustomContent(portfolio.customContentPath)
+      }
     }
   })
   
@@ -22,6 +37,12 @@
       window.scrollTo({ top: 0, behavior: 'instant' })
     }
     previousId = params.id
+    // Load custom content if path exists
+    if (portfolio?.customContentPath) {
+      loadCustomContent(portfolio.customContentPath)
+    } else {
+      customContent = ''
+    }
     // Get 2 random related projects (excluding current)
     import('./portfolioData').then(({ portfolioData }) => {
       relatedProjects = portfolioData
@@ -62,7 +83,7 @@
               <p>{portfolio.description}</p>
               <div class="portfolio-view-list d-flex flex-wrap">
                 <div class="port-view">
-                  <span>Area</span>
+                  <span>Role</span>
                   <h4>{portfolio.area}</h4>
                 </div>
                 <div class="port-view">
@@ -102,36 +123,22 @@
                 </ul>
               </div>
             </div>
-            <!-- Start Blog Details Area  -->
-        <div class="rn-blog-details pt--110 pb--70 bg_color--1">
-            <div class="container">
-                <div class="row">
+            
+            <!-- Custom Content Section -->
+            {#if customContent}
+              {@html customContent}
+            {:else}
+              <!-- Default Content (when no custom content is provided) -->
+              <div class="rn-blog-details pt--110 pb--70 bg_color--1">
+                <div class="container">
+                  <div class="row">
                     <div class="col-lg-12">
-                        <div class="inner-wrapper">
-                            <div class="inner">
-                                <h4 class="title">Main Responsibilities</h4>
-                                <ul class="list-style">
-                                    <li>Leading UI Engineering team</li>
-                                    <li>Prosal and </li>
-                                    <li>Abominable this abidin far successfully then like piquan</li>
-                                    <li>Risus commodo viverra</li>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                                </ul>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                      <div class="inner-wrapper">
+                        <div class="inner">
+                          <p class="mt--40">Project details coming soon.                                
+                            There are many variations of passages of Lorem Ipsum available, but the majority
                                     have suffered alteration in some form, by injected humour, or randomised words
-                                    which don't look even slightly believable. If you are going to use a passage of
-                                    Lorem Ipsum. You need to be sure there isn't anything embarrassing hidden in the
-                                    middle of text. All the Lorem Ipsum generators on the Internet tend toitrrepeat
-                                    predefined chunks. </p>
-                                <div class="thumbnail">
-                                    <img src="/static/images/blog/bl-big-01.jpg" alt="Blog Images">
-                                </div>
-                                <p class="mt--40">There are many variations of passages of Lorem Ipsum available,
-                                    but the majority have suffered alteration in some form, by injected humour, or
-                                    randomised words which don't look even slightly believable. If you are going to
-                                    use a passage of Lorem Ipsum. You need to be sure there isn't anything
-                                    embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
-                                    Internet tend toitrrepeat predefined chunks. </p>
+                                    which don't look even slightly believable. If you are going to use a passage of</p>
                                 <p>Necessary, making this the first true generator on the Internet. It re are many
                                     variations of passages of Lo rem Ipsum available, but the majority have suffered
                                     alteration in some form, by injectedeed eedhumour, or randomised words which
@@ -209,6 +216,9 @@
             </div>
         </div>
         <!-- End Blog Details Area  -->
+            {/if}
+            <!-- End Custom Content Section -->
+            
             <div class="portfolio-thumb-inner">
               <div class="thumb position-relative mb--30">
                 <img src={portfolio.mainImage} alt={portfolio.title} />

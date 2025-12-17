@@ -13,6 +13,7 @@ export interface PortfolioItem {
   mainImage: string
   videoUrl?: string
   additionalImages: string[]
+  customContentPath?: string
   socialLinks: {
     facebook?: string
     linkedin?: string
@@ -25,23 +26,24 @@ export interface PortfolioItem {
 
 export const portfolioData: PortfolioItem[] = [
   {
-    id: 'the-sims-4',
-    title: 'The Sims 4',
+    id: 'ea-nda',
+    title: 'EA NDA Project',
     category: 'Development',
-    imageClass: 'image-8',
-    headerBgClass: 'bg_image--4',
+    imageClass: 'image-20',
+    headerBgClass: 'bg_image--20',
     headerTextColor: 'color-white',
-    subtitle: 'The Sims 4 is a social simulation game developed by Maxis and published by Electronic Arts',
-    description: 'Play with life and discover the possibilities. Unleash your imagination and create a world of Sims that’s wholly unique. Explore and customize every detail from Sims to homes–and much more.',
-    area: 'Game Development',
+    subtitle: 'EA NDA Project - Details coming soon.',
+    description: 'EA NDA Project - Details coming soon.',
+    area: 'Tech UI Lead',
     platform: 'PC, Mac, Consoles',
-    company: 'Maxis/EA Games',
-    mainImage: '/images/bg/sims-other.jpg',
+    company: 'Globant & EA/Maxis',
+    mainImage: '/images/bg/portfolio-2.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
     additionalImages: [
       '/images/portfolio/portfolio-big-02.jpg',
       '/images/portfolio/portfolio-big-01.jpg'
     ],
+    //customContentPath: '../portfolio-content/the-sims-4.html',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/company/maxis-ea/',
       steam: 'https://store.steampowered.com/app/1222670/The_Sims_4/'

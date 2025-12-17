@@ -15,7 +15,7 @@
           <div class="about-inner inner pt--100 pt_sm--40 pt_md--40">
             <div class="section-title">
               <h2 class="title">About Me</h2>
-              <p class="description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered <a href="https://juan.volpe.uy">alteration</a> in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum,</p>
+              <p class="description">My name is Juan Volpe, and I have over 7 years of professional experience working with Unreal Engine and Custom engines. I've working as a Generalist Game Developer,implemented UI systems from the ground up and leading teams in this space for AAA titles such as Fortnite, Starship Troopers: Extermination, and Dauntless.</p>
             </div>
             <div class="tab-wrapper mt--30">
               <ul class="nav nav-tabs tab-style--1" id="myTab" role="tablist">
