@@ -45,8 +45,8 @@ export const portfolioData: PortfolioItem[] = [
     ],
     //customContentPath: '../portfolio-content/the-sims-4.html',
     socialLinks: {
-      linkedin: 'https://www.linkedin.com/company/maxis-ea/',
-      steam: 'https://store.steampowered.com/app/1222670/The_Sims_4/'
+      //linkedin: 'https://www.linkedin.com/company/maxis-ea/',
+      //steam: 'https://store.steampowered.com/app/1222670/The_Sims_4/'
     }
   },
   {
