@@ -219,7 +219,7 @@
             {/if}
             <!-- End Custom Content Section -->
             
-            <div class="portfolio-thumb-inner">
+            <!-- <div class="portfolio-thumb-inner">
               <div class="thumb position-relative mb--30">
                 <img src={portfolio.mainImage} alt={portfolio.title} />
                 {#if portfolio.videoUrl}
@@ -236,7 +236,7 @@
                   <img src={image} alt={portfolio.title} />
                 </div>
               {/each}
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

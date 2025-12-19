@@ -11,8 +11,6 @@ export interface PortfolioItem {
   platform: string
   company: string
   mainImage: string
-  videoUrl?: string
-  additionalImages: string[]
   customContentPath?: string
   socialLinks: {
     facebook?: string
@@ -29,24 +27,17 @@ export const portfolioData: PortfolioItem[] = [
     id: 'ea-nda',
     title: 'EA NDA Project',
     category: 'Development',
-    imageClass: 'image-20',
-    headerBgClass: 'bg_image--20',
+    imageClass: 'image-8',
+    headerBgClass: 'bg_image--4',
     headerTextColor: 'color-white',
-    subtitle: 'EA NDA Project - Details coming soon.',
-    description: 'EA NDA Project - Details coming soon.',
+    subtitle: 'EA NDA AAA Game',
+    description: 'EA NDA Project - AAA Game franchise',
     area: 'Tech UI Lead',
     platform: 'PC, Mac, Consoles',
-    company: 'Globant & EA/Maxis',
-    mainImage: '/images/bg/portfolio-2.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
-    additionalImages: [
-      '/images/portfolio/portfolio-big-02.jpg',
-      '/images/portfolio/portfolio-big-01.jpg'
-    ],
-    //customContentPath: '../portfolio-content/the-sims-4.html',
+    company: 'Globant & EA',
+    mainImage: '/images/bg/ea-nda-other.jpg',
+    customContentPath: '../portfolio-content/ea-nda-project.html',
     socialLinks: {
-      //linkedin: 'https://www.linkedin.com/company/maxis-ea/',
-      //steam: 'https://store.steampowered.com/app/1222670/The_Sims_4/'
     }
   },
   {
@@ -56,19 +47,15 @@ export const portfolioData: PortfolioItem[] = [
     imageClass: 'image-7',
     headerBgClass: 'bg_image--7',
     headerTextColor: 'color-white',
-    subtitle: 'Battle royale game that became a global phenomenon.',
-    description: 'Fortnite is a free-to-play battle royale game where 100 players fight to be the last person standing. The game features building mechanics, regular content updates, and cross-platform play.',
-    area: 'Game Development',
+    subtitle: 'Massive online game created by Epic Games',
+    description: 'Drop into the action you love or discover something new with your squad. Be the last player standing in Battle Royale. Get nostalgic in Fortnite OG. Go tactical in Reload. Headline Fortnite Festival. Explore the worlds of LEGO Fortnite. There is always something new for you and your friends.',
+    area: 'Game Developer',
     platform: 'PC, Consoles, Mobile',
-    company: 'Epic Games',
+    company: 'Globant/Epic Games',
     mainImage: '/images/bg/fortnite-other.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
-    additionalImages: [
-      '/images/portfolio/portfolio-big-02.jpg',
-      '/images/portfolio/portfolio-big-01.jpg'
-    ],
+    customContentPath: '../portfolio-content/fortnite.html',
     socialLinks: {
-      epic: 'https://store.epicgames.com/es-ES/p/fortnite',
+      epic: 'https://store.epicgames.com/en-US/p/fortnite',
       linkedin: 'https://www.linkedin.com/company/fortnite-us/'
     }
   },
@@ -85,11 +72,6 @@ export const portfolioData: PortfolioItem[] = [
     platform: 'PC & Consoles',
     company: 'Offworld Industries',
     mainImage: '/images/bg/troopers-other.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
-    additionalImages: [
-      '/images/portfolio/portfolio-big-02.jpg',
-      '/images/portfolio/portfolio-big-01.jpg'
-    ],
     socialLinks: {
       facebook: '#',
       linkedin: '#',
@@ -111,11 +93,6 @@ export const portfolioData: PortfolioItem[] = [
     platform: 'PC & Consoles',
     company: 'Phoenix Labs',
     mainImage: '/images/bg/dauntless-other.jpg',
-    videoUrl: 'https://www.youtube.com/watch?v=ctsT5Y-InqE',
-    additionalImages: [
-      '/images/portfolio/portfolio-big-02.jpg',
-      '/images/portfolio/portfolio-big-01.jpg'
-    ],
     socialLinks: {
       facebook: '#',
       linkedin: '#',
