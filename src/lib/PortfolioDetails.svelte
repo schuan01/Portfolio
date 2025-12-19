@@ -8,12 +8,24 @@
   let relatedProjects: PortfolioItem[] = []
   let previousId: string | undefined
   let customContent: string = ''
+  const contentModules = import.meta.glob('../portfolio-content/*.html', { query: '?raw', import: 'default' })
   
   async function loadCustomContent(path: string) {
     try {
-      // Use dynamic import with ?raw to enable HMR
-      const module = await import(/* @vite-ignore */ `${path}?raw`)
-      customContent = module.default
+      const loader = contentModules[path]
+      if (loader) {
+        const content = await loader()
+        customContent = content as string
+        return
+      }
+      // Fallback: try fetching from public path if file was placed under public
+      const publicPath = path.replace(/^\.\./, '')
+      const response = await fetch(publicPath)
+      if (response.ok) {
+        customContent = await response.text()
+      } else {
+        customContent = ''
+      }
     } catch (error) {
       console.error('Failed to load custom content:', error)
       customContent = ''
