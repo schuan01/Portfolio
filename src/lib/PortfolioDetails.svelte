@@ -44,8 +44,9 @@
   
   $: if (params.id) {
     portfolio = getPortfolioById(params.id)
-    // Only scroll to top when navigating between different portfolios
-    if (previousId && previousId !== params.id) {
+    // Scroll to top when navigating to a different portfolio (including initial load)
+    // Skip scrolling during hot reload when previousId === params.id
+    if (previousId !== params.id) {
       window.scrollTo({ top: 0, behavior: 'instant' })
     }
     previousId = params.id
@@ -83,6 +84,7 @@
 
 <!-- Start Page Wrapper -->
 <main class="page-wrapper">
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <!-- Start Portfolio Details Area -->
   <div class="rn-portfolio-details ptb--120 bg_color--1">
     <div class="container">
@@ -92,7 +94,7 @@
             <div class="inner">
               <h2>{portfolio.title}</h2>
               <p class="subtitle">{portfolio.subtitle}</p>
-              <p>{portfolio.description}</p>
+              <blockquote class="rn-blog-quote">"{portfolio.description}"</blockquote>
               <div class="portfolio-view-list d-flex flex-wrap">
                 <div class="port-view">
                   <span>Role</span>

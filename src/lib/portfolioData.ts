@@ -66,18 +66,15 @@ export const portfolioData: PortfolioItem[] = [
     imageClass: 'image-3',
     headerBgClass: 'bg_image--5',
     headerTextColor: 'color-white',
-    subtitle: 'Cooperative FPS game based on the iconic franchise.',
-    description: 'Starship Troopers: Extermination is a 16-player co-op FPS where squads of Troopers team up to battle against hordes of alien bugs. Players must work together to complete objectives and survive.',
-    area: 'Game Development',
+    subtitle: 'Cooperative FPS game developed by Offworld Industries',
+    description: '16-player co-op FPS that puts you on the far-off frontlines of an all-out battle against the Bugs! Squad up, grab your rifle, and do your part as an elite Deep Space Vanguard Trooper to take back planets from the Arachnid threat!',
+    area: 'Tech UI Lead',
     platform: 'PC & Consoles',
-    company: 'Offworld Industries',
+    company: 'Globant / Offworld Industries',
     mainImage: '/images/bg/troopers-other.jpg',
+    customContentPath: '../portfolio-content/starship-troopers.html',
     socialLinks: {
-      facebook: '#',
-      linkedin: '#',
-      instagram: '#',
-      twitter: '#',
-      steam: '#'
+      steam: 'https://store.steampowered.com/app/1268750/Starship_Troopers_Extermination/'
     }
   },
   {
@@ -87,18 +84,33 @@ export const portfolioData: PortfolioItem[] = [
     imageClass: 'image-4',
     headerBgClass: 'bg_image--9',
     headerTextColor: 'color-white',
-    subtitle: 'Free-to-play co-op action RPG with monster hunting gameplay.',
-    description: 'Dauntless is a free-to-play online action RPG where players hunt down ferocious Behemoths. Team up with friends to take on epic boss battles and craft powerful weapons and armor.',
+    subtitle: 'Free-to-play action role-playing game developed by Phoenix Labs',
+    description: 'Dauntless was a massively multiplayer RPG where you and other Slayers team up to hunt powerful creatures known as Behemoths. Explore the furthest reaches of the Shattered Isles as you quest, craft, and fight to forge your legacy as a legendary Slayer.',
     area: 'Game Development',
     platform: 'PC & Consoles',
-    company: 'Phoenix Labs',
+    company: 'Globant / Phoenix Labs',
     mainImage: '/images/bg/dauntless-other.jpg',
+    customContentPath: '../portfolio-content/dauntless.html',
     socialLinks: {
-      facebook: '#',
-      linkedin: '#',
-      instagram: '#',
-      twitter: '#',
-      steam: '#'
+      epic: 'https://web.archive.org/web/20250115062427/https://store.epicgames.com/en-US/p/dauntless'
+    }
+  },
+  {
+    id: 'star-wars-hunters',
+    title: 'Star Wars: Hunters',
+    category: 'Trainings',
+    imageClass: 'image-6',
+    headerBgClass: 'bg_image--6',
+    headerTextColor: 'color-white',
+    subtitle: 'Free-to-play 4v4 arena shooter created by NaturalMotion',
+    description: 'Join fast-paced, 4v4 battles in this free action-packed arena shooter. Choose from a roster of new characters including a dark side assassin, a stormtrooper and a ruthless bounty hunter. Wield powerful Abilities, and battle in thrilling multiplayer Arenas inspired by iconic Star Wars locations.',
+    area: 'Trainings',
+    platform: 'Mobile & PC',
+    company: 'Globant / NaturalMotion',
+    mainImage: '/images/bg/star-wars-hunters-other.jpg',
+    customContentPath: '../portfolio-content/star-wars-hunters.html',
+    socialLinks: {
+      steam: 'https://store.steampowered.com/app/2842320/STAR_WARS_Hunters/'
     }
   }
 ]
