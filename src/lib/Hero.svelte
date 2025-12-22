@@ -1,4 +1,5 @@
 <script lang="ts">
+  import MagneticFeature from './MagneticFeature.svelte'
   const subtitle = "Senior Game Developer"
   const name = "Juan"
   const greeting = "Hello, I'm"
@@ -6,7 +7,7 @@
 </script>
 
 <div class="rn-slider-area">
-  <div class="slide personal-portfolio-slider slider-paralax slider-style-3 d-flex align-items-center justify-content-center">
+  <div class="slide personal-portfolio-slider slider-paralax slider-style-3 d-flex align-items-center justify-content-center bg_image bg_image--16">
   <!-- <div class="slide personal-portfolio-slider slider-paralax slider-style-3 d-flex align-items-center justify-content-center bg_image bg_image--16"> -->
     <div class="container">
       <div class="row">
@@ -14,6 +15,7 @@
           <div class="inner text-start">
             <span>{subtitle}</span>
             <h1 class="title">{greeting} <span>{name}</span> {tagline}</h1>
+            <!-- <MagneticFeature/> -->
           </div>
         </div>
       </div>
