@@ -20,8 +20,8 @@
       <div class="row row--35 justify-content-center">
         <div class="col-lg-20">
           <div class="section-title text-center mb--50 mb_sm--30 mb_md--30">
-            <h2 class="title">Contact Me.</h2>
-            <p class="description">If you want to learn more about me or just want to say hi, feel free to reach out via email:
+            <h2 class="title">Contact Me</h2>
+            <p class="description">If you would like to learn more about me or simply want to say hello, feel free to reach out via email:
               <a href="mailto:jcvolpe94@gmail.com"> jcvolpe94@gmail.com</a>
             </p>
           </div>
